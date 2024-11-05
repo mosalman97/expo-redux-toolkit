@@ -17,6 +17,8 @@ import { fetchTodos } from "./store/todoSlice";
 import { createEmploye, updateEmploye, getPosts } from "./store/employeSlice";
 import { getPost } from "./store/postSlice";
 
+import FormScreen from "./Screens/FormScreen";
+
 const MyComponent = () => {
     const dispatch = useDispatch();
     const { data, isloading, error } = useSelector((state) => state.posts);
@@ -165,8 +167,9 @@ export default function App() {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <MyComponent />
+                {/* <MyComponent /> */}
                 {/* <ContentComponent /> */}
+                <FormScreen />
             </PersistGate>
         </Provider>
     );
